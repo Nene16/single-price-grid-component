@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+*,
+*::before, 
+*::after {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+    font-size: var(--MD);
+}
+
+
+/*
+Legend:
+    (00) Root 
+    (01) Style Color&Font
+        (1.1) Community
+        (1.2) Subscription
+        (1.3) Button Subscription
+        (1.4) whyUS
+    (S) Media Laptop/Desktop
+        (S.1) CSS Grid 
+*/
+
+/* (00) Root  */
+:root {
+    /* palette di base*/
+    --textWT: hsl(0, 0%, 100%);
+    --textGRAY: hsl(218, 22%, 67%);
+    --TITLE: hsl(179, 62%, 43%);
+    --TITLE2: hsl(179, 75%, 43%);
+    --BTT: hsl(71, 73%, 54%);
+    --bcg:hsl(204, 43%, 93%);
+    
+    /* font size */
+    --XL:32px;
+    --LG:20px;
+    --MD:16px;
+    --SM:15px;
+
+    /* Type Weight */
+    --bold: 700;
+    --regular: 400;
+
+}
+body {
+    background-color:  var(--bcg);
+    width: 100vw;
+    padding: 5%;
+}
+
+/* (1.0) Style Color&Font  */
+
+/* (1.1) Community */
+
+.community {
+    background-color: var(--textWT);
+    color: var(--textGRAY);
+    padding: 35px;
+    border-radius: 10px 10px 0 0;
+}
+.community h2{
+    color:var(--TITLE);
+    font-size: var(--LG);
+    font-weight: var(--bold);
+    margin-bottom: 20px;
+}
+.community h3{
+    color:var(--BTT);
+    font-size: var(--md);
+    margin-bottom: 12px;
+    font-weight: var(--regular);
+}
+.community p{
+    font-size: var(--SM);
+    font-weight: var(--regular);
+    word-spacing: 1px;
+    line-height: 1.9;
+}
+
+/* (1.2) Subscription*/
+
+.Sub {
+    background-color: var(--TITLE);
+    color: var(--textWT);
+    padding: 35px;
+}
+.Sub h2{
+    font-size: var(--LG);
+    font-weight: var(--regular);
+    margin-bottom: 15px;
+}
+.Sub p {
+    display:flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.Sub p:last-of-type {
+    opacity: 70%;
+}
+.Sub .Dol {
+    font-size: var(--XL);
+    margin-right: 15px;
+}
+.Sub .month {
+    font-size: var(--SM);
+    font-weight: var(--regular);
+    opacity: 50%;
+}
+
+/* (1.3) Button Subscription */
+
+.Sub a {
+    display:block;
+    background-color: var(--BTT);
+    text-align: center;
+    text-decoration: none;
+    padding: 14px;
+    color: var(--textWT);
+    margin-top: 28px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.Sub a:hover {
+    background-color: var(--textWT);
+    color: var(--BTT);
+}
+
+/* (1.4) whyUS */
+.whyUS {
+    background-color: var(--TITLE2);
+    padding: 35px;
+    color: var(--textWT);
+    border-radius: 0 0 10px 10px;
+}
+.whyUS h2 {
+    font-size: var(--LG);
+    font-weight: var(--regular);
+    margin-bottom: 15px;
+}
+.whyUS ul {
+    list-style: none;
+    font-size: var(--SM);
+    font-weight: var(--regular);
+    opacity: 70%;
+    word-spacing: 1px;
+}
+
+
+/* (S) Media Device */
+
+@media all and (min-width:1024px) {
+    
+/* (S.1) CSS Grid  */
+
+    body {
+        background-color:  var(--bcg);
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        display: grid;
+        width: 635px;
+        height: auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        border-radius: 5px;
+    }
+    .community {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+    .Sub {
+        border-radius: 0 0 0 10px; 
+    }
+    .whyUS {
+        border-radius: 0 0 10px 0;
+    }
+ }
+
